@@ -8,16 +8,16 @@ import java.util.List;
 @Table(name = "tb_objetivo")
 public class Objetivo implements Serializable {
     @Id
+    @SequenceGenerator(name = "seq_objetivo" , sequenceName = "seq_objetivo_id",allocationSize = 1)
+    @GeneratedValue(generator = "seq_objetivo", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String nome;
     private Integer pontos;
 
-    @OneToMany(mappedBy = "objetivo")
+    @ManyToMany
+    @JoinTable(name = "tb_objetivo_local", joinColumns = {@JoinColumn(name = "objetivo_id")},
+            inverseJoinColumns = {@JoinColumn(name = "local_id")})
     private List<Local> locais;
-
-    @ManyToOne
-    @JoinColumn(name = "round_id")
-    private Round round;
 
     public Objetivo(){
 

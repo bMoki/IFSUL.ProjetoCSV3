@@ -9,12 +9,16 @@ import java.util.List;
 @Table(name = "tb_round")
 public class Round implements Serializable {
     @Id
+    @SequenceGenerator(name = "seq_round",sequenceName = "seq_round_id",allocationSize = 1)
+    @GeneratedValue(generator = "seq_round",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private Integer numero;
     private Calendar inicio;
     private Calendar fim;
 
-    @OneToMany(mappedBy = "round")
+    @ManyToMany
+    @JoinTable(name = "tb_round_objetivo", joinColumns = {@JoinColumn(name = "round_id")},
+            inverseJoinColumns = {@JoinColumn(name = "objetivo_id")})
     private List<Objetivo> objetivos;
 
     @ManyToOne

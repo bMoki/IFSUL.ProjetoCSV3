@@ -1,9 +1,6 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,10 +8,14 @@ import java.util.List;
 @Table(name = "tb_mapa")
 public class Mapa implements Serializable {
     @Id
+    @SequenceGenerator(name = "seq_mapa", sequenceName = "seq_mapa_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_mapa",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String nome;
 
-    @OneToMany(mappedBy = "mapa")
+    @ManyToMany
+    @JoinTable(name = "tb_mapa_local", joinColumns = {@JoinColumn(name = "mapa_id")},
+            inverseJoinColumns = {@JoinColumn(name = "local_id")})
     private List<Local> locais;
 
     private Mapa(){

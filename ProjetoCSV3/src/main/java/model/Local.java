@@ -8,18 +8,12 @@ import java.io.Serializable;
 public class Local implements Serializable {
 
     @Id
+    @SequenceGenerator(name="seq_local", sequenceName = "seq_local_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_local",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String nome;
     private String longitude;
     private String latitude;
-
-    @ManyToOne
-    @JoinColumn(name = "mapa_id")
-    private Mapa mapa;
-
-    @ManyToOne
-    @JoinColumn(name = "objetivo_id")
-    private Objetivo objetivo;
 
     public Local(){
 

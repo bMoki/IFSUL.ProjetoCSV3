@@ -9,6 +9,8 @@ import java.util.List;
 @Table(name = "tb_partida")
 public class Partida implements Serializable {
     @Id
+    @SequenceGenerator(name = "seq_partida",sequenceName = "seq_partida_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_partida",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private Calendar inicio;
     private Calendar fim;

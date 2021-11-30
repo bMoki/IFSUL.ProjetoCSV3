@@ -9,7 +9,7 @@ import model.Modo;
 import model.Objetivo;
 import model.Partida;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-11-30T08:56:26", comments="EclipseLink-2.7.7.v20200504-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-11-30T09:24:42", comments="EclipseLink-2.7.7.v20200504-rNA")
 @StaticMetamodel(Round.class)
 public class Round_ { 
 

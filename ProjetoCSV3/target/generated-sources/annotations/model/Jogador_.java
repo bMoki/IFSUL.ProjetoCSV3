@@ -10,7 +10,7 @@ import model.Compra;
 import model.Endereco;
 import model.Patente;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-11-30T08:37:36", comments="EclipseLink-2.7.7.v20200504-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-11-30T09:27:02", comments="EclipseLink-2.7.7.v20200504-rNA")
 @StaticMetamodel(Jogador.class)
 public class Jogador_ { 
 
